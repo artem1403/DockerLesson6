@@ -3,9 +3,9 @@
 Проходим курс https://devops-school.ru/devops_engineer.html, собираем такой Docker-контейнер, чтобы он мог выполнить сборку java-приложения средствами maven и запустить его в веб-сервере tomcat.
 
 Приложение выбрано 
-https://github.com/farin/JCloisterZone
+https://github.com/GoogleCloudPlatform/appengine-java-vm-sudoku-sample
 
-Конкретнее этот [коммит](https://github.com/farin/JCloisterZone/commit/90fc36957e55a52caf1e9f3884a8c83bcc32890d)
+Конкретнее этот [коммит](https://github.com/GoogleCloudPlatform/appengine-java-vm-sudoku-sample/commit/ee79082e076efc81da7798d19653e89659d83afd)
 
 ## Что просходит в Dockerfile
 
@@ -15,3 +15,11 @@ https://github.com/farin/JCloisterZone
 * `tomcat9`
 * `maven`
 Одной командой `RUN`, чтобы не создавать лишние слои.
+
+
+### Команды на память
+```bash
+docker build -t dockerlesson6 .
+docker run -d -p 8080:8080 --name lesson6 dockerlesson6:latest
+docker start lesson6
+```
