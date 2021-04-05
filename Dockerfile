@@ -26,4 +26,11 @@ ADD server.xml /usr/local/conf/server.xml
 # Еще нехватает /usr/local/conf/tomcat-users.xml
 ADD tomcat-users.xml /usr/local/conf/tomcat-users.xml
 
+# Cервер запускается, но .war не видит, выдает в браузере ошибку 404
+# Попробуем закинуть еще файлов с конфигами, может поможет
+ADD tomcat-users.xsd /usr/local/conf/tomcat-users.xsd
+# Добавление tomcat-users.xsd не помогло
+ADD web.xml /usr/local/conf/web.xml
+# Добавление web.xml не помогло, но может в корень положить index.html?
+
 CMD ["/usr/share/tomcat9/bin/catalina.sh", "run"]
